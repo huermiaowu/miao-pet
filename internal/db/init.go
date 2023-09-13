@@ -1,9 +1,9 @@
 package db
 
 import (
+	"github.com/huermiaowu/miao-pet/internal/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"pet/internal/config"
 )
 
 var DB *gorm.DB

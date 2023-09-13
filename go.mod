@@ -1,4 +1,4 @@
-module pet
+module github.com/huermiaowu/miao-pet
 
 go 1.20
 

@@ -3,15 +3,15 @@ package main
 import (
 	"context"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/huermiaowu/miao-pet/internal/app"
+	"github.com/huermiaowu/miao-pet/internal/config"
+	"github.com/huermiaowu/miao-pet/internal/handler"
+	"github.com/huermiaowu/miao-pet/internal/svc"
+	pet "github.com/huermiaowu/miao-pet/pb"
 	"github.com/huerni/gmitex/pkg/http/handlers"
 	"github.com/huerni/gmitex/pkg/http/response"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/encoding/protojson"
-	"pet/internal/app"
-	"pet/internal/config"
-	"pet/internal/handler"
-	"pet/internal/svc"
-	pet "pet/pb"
 )
 
 func main() {

@@ -5,9 +5,9 @@ package handler
 import (
 	"context"
 
-	"pet/internal/service"
-	"pet/internal/svc"
-	"pet/pb"
+	"github.com/huermiaowu/miao-pet/internal/service"
+	"github.com/huermiaowu/miao-pet/internal/svc"
+	"github.com/huermiaowu/miao-pet/pb"
 )
 
 type PetServer struct {

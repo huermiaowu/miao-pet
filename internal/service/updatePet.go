@@ -3,12 +3,12 @@ package service
 import (
 	"context"
 	"fmt"
+	"github.com/huermiaowu/miao-pet/internal/db"
 	"github.com/huerni/gmitex/pkg/errno"
 	"gorm.io/gorm"
-	"pet/internal/db"
 
-	"pet/internal/svc"
-	"pet/pb"
+	"github.com/huermiaowu/miao-pet/internal/svc"
+	"github.com/huermiaowu/miao-pet/pb"
 )
 
 type UpdatePetService struct {

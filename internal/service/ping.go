@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"pet/internal/svc"
-	"pet/pb"
+	"github.com/huermiaowu/miao-pet/internal/svc"
+	"github.com/huermiaowu/miao-pet/pb"
 )
 
 type PingService struct {

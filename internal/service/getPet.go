@@ -2,10 +2,10 @@ package service
 
 import (
 	"context"
+	"github.com/huermiaowu/miao-pet/internal/db"
+	"github.com/huermiaowu/miao-pet/internal/svc"
+	"github.com/huermiaowu/miao-pet/pb"
 	"github.com/huerni/gmitex/pkg/errno"
-	"pet/internal/db"
-	"pet/internal/svc"
-	"pet/pb"
 )
 
 type GetPetService struct {

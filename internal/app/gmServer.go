@@ -3,6 +3,9 @@ package app
 import (
 	"context"
 	"fmt"
+	"github.com/huermiaowu/miao-pet/internal/config"
+	"github.com/huermiaowu/miao-pet/internal/db"
+	"github.com/huermiaowu/miao-pet/internal/router"
 	"github.com/huerni/gmitex/pkg/etcd"
 	"github.com/huerni/gmitex/pkg/gw/traefik"
 	"github.com/huerni/gmitex/pkg/server/gs"
@@ -11,9 +14,6 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"pet/internal/config"
-	"pet/internal/db"
-	"pet/internal/router"
 	"syscall"
 )
 
