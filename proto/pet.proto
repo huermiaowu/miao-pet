@@ -1,0 +1,88 @@
+syntax = "proto3";
+option go_package = "./pb";
+package pet;
+
+import "google/api/annotations.proto";
+
+enum ErrCode {
+  NormalCode                 = 0;
+  SuccessCode                = 200;
+  ServiceErrCode             = 500;
+  ParamErrCode               = 10002;
+
+  PetNodFound = 30001;
+}
+
+message PingReq {
+      string ping = 1;
+}
+
+message PingResp {
+      string pong = 1;
+}
+
+message PetInfo {
+  uint64 id = 1;
+  string name = 2;
+  int32 sex = 3;
+  int32 age = 4;
+  uint64 userId = 5;
+}
+
+message AddPetReq {
+  string name = 1;
+  int32 sex = 2;
+  int32 age = 3;
+  uint64 userId = 4;
+}
+
+message AddPetResp {
+  PetInfo petInfo = 1;
+}
+
+message GetPetReq {
+  optional uint64 id = 1;
+  optional uint64 userId = 2;
+}
+
+message GetPetResp {
+  repeated PetInfo petInfos = 1;
+}
+
+message UpdatePetReq {
+  uint64 id = 1;
+  string name = 2;
+  int32 sex = 3;
+  int32 age = 4;
+}
+
+message UpdatePetResp {
+  PetInfo petInfo = 1;
+}
+
+service pet {
+      rpc Ping(PingReq) returns (PingResp) {
+            option (google.api.http) = {
+                  get: "/api/v1/pet/ping"
+            };
+      };
+
+      rpc AddPet(AddPetReq) returns (AddPetResp) {
+        option (google.api.http) = {
+          post: "/api/v1/pet/addpet",
+          body: "*"
+        };
+      };
+
+      rpc GetPet(GetPetReq) returns (GetPetResp) {
+        option (google.api.http) = {
+          get: "/api/v1/pet"
+        };
+      };
+
+      rpc UpdatePet(UpdatePetReq) returns (UpdatePetResp) {
+        option (google.api.http) = {
+          post: "/api/v1/pet/update"
+        };
+      }
+}
